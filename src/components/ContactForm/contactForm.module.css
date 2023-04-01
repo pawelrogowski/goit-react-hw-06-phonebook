@@ -1,0 +1,9 @@
+.phonebook-input {
+  width: 300px;
+  font-size: 18px;
+}
+.add-contact-button {
+  padding: 0 5px;
+  font-size: 15px;
+  margin: 20px 0 30px 0;
+}
