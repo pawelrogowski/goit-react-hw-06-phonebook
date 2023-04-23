@@ -1,29 +1,35 @@
-import { createSlice } from '@reduxjs/toolkit';
+//contactSlice.js
+import { createSlice, createAction } from '@reduxjs/toolkit';
+
+export const addContact = createAction('contacts/addContact');
+export const deleteContact = createAction('contacts/deleteContact');
+export const setFilter = createAction('contacts/setFilter');
+export const initializeContacts = createAction('contacts/initializeContacts');
 
 export const contactSlice = createSlice({
   name: 'contacts',
   initialState: {
-    items: [
-      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-    ],
+    items: [],
     filter: '',
   },
-  reducers: {
-    addContact: (state, action) => {
+  reducers: {},
+  extraReducers: {
+    [addContact]: (state, action) => {
       state.items.push(action.payload);
     },
-    deleteContact: (state, action) => {
+    [deleteContact]: (state, action) => {
       state.items = state.items.filter(contact => contact.id !== action.payload);
     },
-    setFilter: (state, action) => {
+    [setFilter]: (state, action) => {
       state.filter = action.payload;
+    },
+    [initializeContacts]: state => {
+      const savedContacts = JSON.parse(localStorage.getItem('contacts'));
+      if (savedContacts) {
+        state.items = savedContacts;
+      }
     },
   },
 });
-
-export const { addContact, deleteContact, setFilter } = contactSlice.actions;
 
 export default contactSlice.reducer;
