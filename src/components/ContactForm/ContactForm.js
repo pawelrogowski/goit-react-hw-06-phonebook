@@ -19,11 +19,12 @@ const ContactForm = ({ onSubmit }) => {
   };
 
   return (
-    <div className={styles['phonebook-input']}>
+    <div>
       <form onSubmit={handleSubmit}>
         <label>
           Name:
           <input
+            className={styles['phonebook-input']}
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -36,6 +37,7 @@ const ContactForm = ({ onSubmit }) => {
         <label>
           Number:
           <input
+            className={styles['phonebook-input']}
             type="tel"
             name="number"
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
