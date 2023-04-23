@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     dispatch(initializeContacts());
-  }, []);
+  }, [dispatch]);
 
   const handleAddContact = (name, number) => {
     const id = nanoid();
