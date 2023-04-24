@@ -6,6 +6,19 @@
 .add-contact-button {
   padding: 0 5px;
   font-size: 15px;
-  margin: 20px 0 30px 0;
+  margin: 10px 0 30px 0;
   color: black;
+}
+
+.contact-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 200px;
 }

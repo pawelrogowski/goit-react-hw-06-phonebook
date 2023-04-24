@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import styles from './contactForm.module.css';
 
-const ContactForm = ({ onSubmit }) => {
+const ContactForm = ({ onSubmit: addContact }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -13,15 +13,15 @@ const ContactForm = ({ onSubmit }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit(name, number);
+    addContact(name, number);
     setName('');
     setNumber('');
   };
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label>
+      <form className={styles['contact-form']} onSubmit={handleSubmit}>
+        <label className={styles['contact-label']}>
           Name:
           <input
             className={styles['phonebook-input']}
@@ -34,7 +34,7 @@ const ContactForm = ({ onSubmit }) => {
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className={styles['contact-label']}>
           Number:
           <input
             className={styles['phonebook-input']}

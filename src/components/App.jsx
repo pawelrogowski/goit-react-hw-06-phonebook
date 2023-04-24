@@ -42,12 +42,16 @@ function App() {
 
   return (
     <div className={styles.container}>
-      <h1>Phonebook</h1>
-      <ContactForm onSubmit={handleAddContact} />
+      <div className={styles.phonebook}>
+        <h1>Phonebook</h1>
+        <ContactForm onSubmit={handleAddContact} />
+      </div>
 
-      <h2>Contacts</h2>
-      <Filter value={filter} onChange={handleFilterChange} />
-      <ContactList contacts={filteredContacts} onDeleteContact={handleDeleteContact} />
+      <div className={styles.contacts}>
+        <h2>Contacts</h2>
+        <Filter value={filter} onChange={handleFilterChange} />
+        <ContactList contacts={filteredContacts} onDeleteContact={handleDeleteContact} />
+      </div>
     </div>
   );
 }
