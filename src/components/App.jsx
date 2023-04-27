@@ -5,7 +5,7 @@ import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
 import styles from './app.module.css';
-import { addContact, deleteContact, setFilter, initializeContacts } from '../app/contactSlice';
+import { addContact, deleteContact, setFilter, initializeContacts } from '../redux/contactSlice';
 
 function App() {
   const filter = useSelector(state => state.contacts.filter);
